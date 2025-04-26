@@ -1,0 +1,149 @@
+/* Reset og basis */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+}
+
+/* Bakgrunns-video */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#oceanVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Glassmorphism-kort */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Overskrift og tekst */
+.card h1 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.card p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Pilleknapp */
+.pill-button {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s;
+}
+
+.pill-button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+/* Sosiale knapper */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-btn {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 0.5rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.social-btn img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+
+/* Animasjon for kortet */
+@keyframes fadeInPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Legg til animasjonen på kortet */
+.card {
+  animation: fadeInPop 1s ease forwards;
+}
+
+
+/* Fade-in for knapper */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Start skjult */
+.pill-button, .social-buttons {
+  opacity: 0;
+}
+
+/* Animasjoner med forsinkelse */
+.card.loaded .pill-button {
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 1s; /* Starter etter kortet */
+}
+
+.card.loaded .social-buttons {
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 1.5s; /* Starter etter pill-knappen */
+}
