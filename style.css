@@ -75,25 +75,27 @@ body, html {
 
 /* Button for contact details */
 .pill-button {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08); /* Svak hvit bakgrunn */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Tynn hvit kant */
   color: white;
-  border: none;
   padding: 0.8rem 2rem;
   border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /*font*/
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-  transition: background 0.3s;
-  margin-bottom: 2rem; /* more space under the btn */
 }
 
 /* Soicial buttons */
@@ -106,7 +108,7 @@ body, html {
 
 .social-btn {
   background: transparent; /* Ingen bakgrunnsfarge */
-  border: 2px solid white; /* Hvit tydelig sirkel */
+  border: 1px solid white; /* Hvit tydelig sirkel */
   border-radius: 50%; /* Full sirkel */
   width: 64px;
   height: 64px;
@@ -124,6 +126,11 @@ body, html {
   height: 28px;
 }
 
+.social-btn:hover,
+.social-btn:active {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
 
 
 /* Animation for the card */
