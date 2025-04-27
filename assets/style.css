@@ -132,6 +132,8 @@ body, html {
   overflow: hidden;
   opacity: 0;
   z-index: 2; /* Sørg for at knappen er oppå ripples og annet */
+  margin-top: 2rem;
+  margin-bottom: 3rem; 
   background: rgba(255, 255, 255, 0.08); /* Svak hvit bakgrunn */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Tynn hvit kant */
   color: white;
