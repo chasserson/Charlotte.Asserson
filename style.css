@@ -11,37 +11,6 @@ body, html {
   overflow: hidden;
 }
 
-/* Background image */
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 120%;
-  height: 120%;
-  background: url('assets/images/ocean.jpg') no-repeat center center/cover;
-  animation: oceanWaves 3s ease-in-out infinite;
-  z-index: -1;
-}
-
-/* Animasjon */
-@keyframes oceanWaves {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  25% {
-    transform: translate(10px, -5px) scale(1.02);
-  }
-  50% {
-    transform: translate(0px, -10px) scale(1.015);
-  }
-  75% {
-    transform: translate(-10px, -5px) scale(1.02);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
 
 /* Glassmorphism-card */
 .card {
