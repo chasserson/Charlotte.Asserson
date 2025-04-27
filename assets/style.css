@@ -188,7 +188,9 @@ body, html {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(5px);
-  transition: background 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
   opacity: 0;
 }
 
@@ -209,6 +211,8 @@ body, html {
   gap: 1.5rem;
   flex-wrap: wrap;
   opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
 }
 
 .card.loaded ~ .bottom-area .social-buttons {
