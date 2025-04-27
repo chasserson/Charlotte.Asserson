@@ -96,10 +96,6 @@ body, html {
   margin-bottom: 2rem; /* more space under the btn */
 }
 
-.pill-button:hover {
-  background: linear-gradient(135deg, #0072ff, #00c6ff);
-}
-
 /* Soicial buttons */
 .social-buttons {
   display: flex;
