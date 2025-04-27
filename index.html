@@ -31,53 +31,58 @@
   <source src="https://raw.github.com/chasserson/Charlotte.Asserson/b58c9debb980e9b74ee076986b3f85e930c8290a/assets/background.mp4" type="video/mp4">
 </video>
 
-<!-- Main Card -->
-<div class="card">
+<!-- Main Container -->
+<div class="page-container">
 
-  <!-- Profile Picture -->
-  <img class="profile-pic" src="https://raw.github.com/chasserson/Charlotte.Asserson/3358333456c89e36c505b815321d40ef3fbed508/assets/profilepicture.jpg" alt="Profilbilde">
+  <!-- Main Card -->
+  <div class="card">
 
-  <!-- Name and Title -->
-  <h1>Charlotte Asserson</h1>
-  <p>Aqua Medicine Biologist | Bremnes Seashore AS</p>
+    <!-- Profile Picture -->
+    <img class="profile-pic" src="https://raw.github.com/chasserson/Charlotte.Asserson/3358333456c89e36c505b815321d40ef3fbed508/assets/profilepicture.jpg" alt="Profilbilde">
 
-  <!-- Logo -->
-  <div class="logo">
-    <img src="assets/logo.png" alt="Logo">
+    <!-- Name and Title -->
+    <h1>Charlotte Asserson</h1>
+    <p>Aqua Medicine Biologist | Bremnes Seashore AS</p>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo">
+    </div>
+
+    <!-- Info Text -->
+    <div class="info-box">
+      <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company. I have solid experience with the seawater phase of production, and during the past year, I have expanded my expertise to include the smolt phase, working with both flow-through and RAS systems.</p>
+    </div>
+
   </div>
 
-  <!-- Info Text -->
-  <div class="info-box">
-    <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company. I have solid experience with the seawater phase of production, and during the past year, I have expanded my expertise to include the smolt phase, working with both flow-through and RAS systems.</p>
-  </div>
+  <!-- Bottom Area -->
+  <div class="bottom-area">
 
-</div>
-
-<!-- Bottom Area -->
-<div class="bottom-area">
-
-  <!-- Stay in Touch Button -->
-  <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
-    Stay in touch
-  </a>
-
-  <!-- Social Buttons -->
-  <div class="social-buttons">
-    <a href="https://www.linkedin.com/in/charlotte-asserson-38239039" target="_blank" class="social-btn">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
-        <rect x="2" y="9" width="4" height="12"></rect>
-        <circle cx="4" cy="4" r="2"></circle>
-      </svg>
+    <!-- Stay in Touch Button -->
+    <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
+      Stay in touch
     </a>
 
-    <a href="https://seashore.no" target="_blank" class="social-btn">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
-    </a>
+    <!-- Social Buttons -->
+    <div class="social-buttons">
+      <a href="https://www.linkedin.com/in/charlotte-asserson-38239039" target="_blank" class="social-btn">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+
+      <a href="https://seashore.no" target="_blank" class="social-btn">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </a>
+    </div>
+
   </div>
 
 </div>
@@ -88,7 +93,7 @@
     const card = document.querySelector('.card');
     const stayInTouchButton = document.getElementById('stayInTouch');
 
-    // Legger på 'loaded' for CSS-anim
+    // Trigger 'loaded' animation
     card.classList.add('loaded');
 
     // Ripple effekt på kontakt-knapp
