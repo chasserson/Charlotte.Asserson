@@ -20,6 +20,7 @@
     <p>Hei! Jeg er en kreativ utvikler med fokus på elegante løsninger og gode brukeropplevelser.</p>
 
     <button class="pill-button">Stay in touch</button>
+    <a href="contact.vcf" class="pill-button" id="stayInTouch">Stay in touch</a>
 
     <div class="social-buttons">
       <a href="https://linkedin.com" target="_blank" class="social-btn">
@@ -31,11 +32,45 @@
     </div>
   </div>
 
+  
+/* FALLBACK FOR CONTACT BTN*/
   <script>
   window.addEventListener('load', () => {
     document.querySelector('.card').classList.add('loaded');
   });
 </script>
+
+  <script>
+  window.addEventListener('load', () => {
+    document.querySelector('.card').classList.add('loaded');
+
+    const stayInTouchButton = document.getElementById('stayInTouch');
+
+    stayInTouchButton.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const url = stayInTouchButton.getAttribute('href');
+
+      fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+          const blobUrl = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = blobUrl;
+          a.download = 'contact.vcf';
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(blobUrl);
+        })
+        .catch(() => {
+          // If it fails, the file normally opens in a new window.
+          window.open(url, '_blank');
+        });
+    });
+  });
+</script>
+
 
 </body>
 </html>
