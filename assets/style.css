@@ -17,7 +17,7 @@ body, html {
   left: 0;
   width: 120%;
   height: 120%;
-   background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/ocean.webp') no-repeat center center/cover;
+  background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/ocean.webp') no-repeat center center/cover;
   animation: oceanWaves 3s ease-in-out infinite;
   z-index: -1;
 
@@ -37,7 +37,7 @@ body, html {
   border-radius: 20px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Ekte glass-skygge */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
   color: white;
   display: flex;
@@ -212,3 +212,37 @@ body, html {
   animation: fadeIn 0.8s ease forwards;
   animation-delay: 1.5s; /* Starting after contact-button */
 }
+
+/* Keyframes for sosial icon-flow */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Start hidden */
+.social-buttons a {
+  opacity: 0;
+}
+
+/* When card loads, animate */
+.card.loaded .social-buttons a {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Delay on every icon */
+.card.loaded .social-buttons a:nth-child(1) {
+  animation-delay: 1.5s;
+}
+
+.card.loaded .social-buttons a:nth-child(2) {
+  animation-delay: 1.8s;
+}
+
+/* Add more icons if you've got any */
+
