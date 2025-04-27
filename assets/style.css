@@ -1,4 +1,4 @@
-/* Reset and base */
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +8,11 @@
 body, html {
   height: 100%;
   font-family: "Roboto", sans-serif;
-  overflow-x: hidden; /* Unngå horisontal scroll */
-  background: #000; /* fallback hvis bakgrunnsbildet ikke laster */
+  background: #000;
+  overflow-x: hidden;
 }
 
-/* Background image */
+/* Background Image */
 .background-image {
   position: fixed;
   top: 0;
@@ -20,20 +20,20 @@ body, html {
   width: 120%;
   height: 120%;
   background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/ocean.webp') no-repeat center center/cover;
-  animation: oceanWaves 3s ease-in-out infinite;
+  animation: oceanWaves 6s ease-in-out infinite;
   z-index: -1;
 }
 
-/* Ocean movement animation */
+/* Background movement */
 @keyframes oceanWaves {
-  0% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(10px, -5px) scale(1.02); }
-  50% { transform: translate(0, -10px) scale(1.015); }
-  75% { transform: translate(-10px, -5px) scale(1.02); }
-  100% { transform: translate(0, 0) scale(1); }
+  0% { transform: translate(0px, 0px) scale(1); }
+  25% { transform: translate(8px, -5px) scale(1.02); }
+  50% { transform: translate(0px, -8px) scale(1.015); }
+  75% { transform: translate(-8px, -5px) scale(1.02); }
+  100% { transform: translate(0px, 0px) scale(1); }
 }
 
-/* Glassmorphism card */
+/* Glassmorphism Card */
 .card {
   position: absolute;
   top: 50%;
@@ -41,22 +41,21 @@ body, html {
   transform: translate(-50%, -50%);
   width: 85%;
   max-width: 380px;
-  height: 520px;
-  padding: 2rem 1.5rem;
+  padding: 6rem 2rem 2rem;
   background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 20px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  color: white;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
   animation: fadeInPop 1s ease forwards;
 }
 
-/* Profile picture */
+/* Profile Picture */
 .profile-pic {
   position: absolute;
   top: 0;
@@ -64,7 +63,7 @@ body, html {
   transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 50%;
   padding: 5px;
@@ -79,39 +78,37 @@ body, html {
   border-radius: 50%;
 }
 
-/* When card loads */
+/* Fade in profile pic */
 .card.loaded .profile-pic {
   animation: fadeIn 0.8s ease forwards;
   animation-delay: 0.5s;
 }
 
-/* Heading */
+/* Name */
 .card h1 {
-  font-family: "Abril Fatface", serif;
+  font-family: "Abril Fatface", cursive;
   font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: white;
+  margin-top: 2rem;
 }
 
-/* Occupation text */
+/* Job Title */
 .card > p {
-  font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  font-weight: 200;
-  margin-bottom: 2rem;
-  color: white;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
 }
 
-/* Info box */
+/* Info Box */
 .info-box {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+  margin-bottom: 2rem;
+  max-width: 300px;
   width: 100%;
-  max-width: 320px;
   text-align: justify;
   opacity: 0;
 }
@@ -119,10 +116,11 @@ body, html {
 .info-box p {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  font-weight: 300;
   color: white;
 }
 
-/* Stay in touch button */
+/* Stay in Touch Button */
 .pill-button {
   position: relative;
   overflow: hidden;
@@ -134,32 +132,27 @@ body, html {
   padding: 0.8rem 2rem;
   border-radius: 50px;
   font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 200;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  transition: background 0.3s, transform 0.3s;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: background 0.3s, transform 0.3s;
   opacity: 0;
 }
 
-/* Button hover */
 .pill-button:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
 }
 
-/* Social buttons */
+/* Social Buttons */
 .social-buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-top: auto;
   position: relative;
   z-index: 2;
   opacity: 0;
@@ -169,8 +162,8 @@ body, html {
   background: transparent;
   border: 1px solid white;
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,15 +172,13 @@ body, html {
   transition: transform 0.3s;
 }
 
-.social-btn:hover,
-.social-btn:active {
-  transform: scale(1.15);
-}
-
-/* SVG inside social buttons */
 .social-btn svg {
   width: 28px;
   height: 28px;
+}
+
+.social-btn:hover {
+  transform: scale(1.15);
 }
 
 /* Animations */
@@ -222,10 +213,15 @@ body, html {
   to { transform: scale(4); opacity: 0; }
 }
 
-/* When card loads, animate */
+/* When card loads, animate elements */
 .card.loaded .pill-button {
   animation: fadeUpBounce 0.8s ease forwards;
   animation-delay: 1.2s;
+}
+
+.card.loaded .info-box {
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.8s;
 }
 
 .card.loaded .social-buttons a {
@@ -240,12 +236,7 @@ body, html {
   animation-delay: 1.8s;
 }
 
-.card.loaded .info-box {
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.8s;
-}
-
-/* Ripple */
+/* Ripple effect inside button */
 .ripple {
   position: absolute;
   border-radius: 50%;
