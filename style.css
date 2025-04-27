@@ -105,27 +105,25 @@ body, html {
 }
 
 .social-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(5px);
+  background: transparent; /* Ingen bakgrunnsfarge */
+  border: 2px solid white; /* Hvit tydelig sirkel */
+  border-radius: 50%; /* Full sirkel */
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px); /* Beholder glass-effekt hvis ønsket */
   -webkit-backdrop-filter: blur(5px);
-  border-radius: 50%;
-  padding: 0.5rem;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Liten skygge for løft */
   transition: transform 0.3s;
 }
 
-.social-btn:hover {
-  transform: scale(1.1);
+.social-btn svg {
+  width: 28px;
+  height: 28px;
 }
 
-.social-btn img {
-  width: 32px;
-  height: 32px;
-  display: block;
-}
 
 
 /* Animation for the card */
