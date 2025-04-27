@@ -202,15 +202,6 @@ body, html {
   to { transform: scale(4); opacity: 0; }
 }
 
-/* Ripple effect inside button */
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: scale(0);
-  animation: rippleEffect 600ms linear;
-  pointer-events: none;
-}
 
 /* Responsive adjustments */
 @media (max-width: 360px) {
