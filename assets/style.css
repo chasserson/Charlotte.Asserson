@@ -11,7 +11,7 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Background Video */
+/* Background Video + Fallback */
 .background-video {
   position: fixed;
   top: 0;
@@ -20,7 +20,12 @@ body, html {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/fd17b48afbdb3743ca3d133c3fe264b45dbe174d/assets/ocean.webp') no-repeat center center/cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 /* Responsive adjustments for small screens */
 @media (max-width: 360px) {
