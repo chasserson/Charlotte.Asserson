@@ -290,3 +290,26 @@ body, html {
   animation-delay: 1.2s; /* small delay and flowting in before the icons */
 }
 
+/* Ripple-effekt container */
+.pill-button {
+  position: relative; /* Viktig for ripple å sitte inni */
+  overflow: hidden;   /* Hindrer ripple fra å gå utenfor knappen */
+}
+
+/* Ripple-stil */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: rippleEffect 600ms linear;
+  pointer-events: none; /* Ikke blokkere klikk */
+}
+
+/* Ripple-animering */
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
