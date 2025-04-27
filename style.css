@@ -49,20 +49,21 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85%; /*with of box*/
-  max-width: 520px; /*size of box*/
+  width: 85%;
+  max-width: 380px;
+  height: 520px;
   padding: 2rem 1.5rem;
-  background: rgba(0, 0, 0, 0.20); /* Dark background in card */
+  background: rgba(255, 255, 255, 0.15); /* Lys glass bakgrunn */
   border-radius: 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Ekte glass-skygge */
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6); /* Heavier shadow */
   color: white;
-  animation: fadeInPop 1s ease forwards;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeInPop 1s ease forwards;
   
 }
 
