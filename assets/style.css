@@ -32,6 +32,52 @@ body, html {
   100% { transform: translate(0px, 0px) scale(1); }
 }
 
+/* Responsive adjustments for very small screens */
+@media (max-width: 360px) {
+  .card {
+    width: 95%;
+    max-width: 320px;
+    padding: 6rem 1rem 2rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+  }
+
+  .card h1 {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .card > p {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .info-box {
+    max-width: 280px;
+    padding: 1rem;
+  }
+
+  .pill-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
 /* Glassmorphism Card */
 .card {
   position: absolute;
@@ -95,33 +141,22 @@ body, html {
   margin-bottom: 0.5rem;
 }
 
-/* Job Title */
 .card > p {
-  font-family: "Abril Fatface", cursive;
-  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 100;
+  line-height: 1.4;
   margin-bottom: 1.2rem;
   padding: 0 0.5rem;
 }
 
 /* Info Box */
-.info-box {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 300px;
-  text-align: justify;
-  opacity: 0;
-}
-
-.info-box p {
+.info-text {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
+  font-size: 0.9rem;
+  font-weight: 100; /* THIN */
+  line-height: 1.6;
+  text-align: justify;
   color: white;
 }
 
@@ -136,7 +171,12 @@ body, html {
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
+  
+  font-family: "Roboto", sans-serif; /* 🆕 */
   font-size: 1rem;
+  font-weight: 200; /* 🆕 Roboto Thin for knapp */
+  text-transform: none; /* 🆕 Ikke store bokstaver */
+  
   text-decoration: none;
   display: inline-flex;
   align-items: center;
