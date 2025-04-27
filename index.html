@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charlotte Asserson</title>
 
-  <!-- Preload critical assets -->
+  <!-- Preload assets -->
   <link rel="preload" as="image" href="https://raw.github.com/chasserson/Charlotte.Asserson/3358333456c89e36c505b815321d40ef3fbed508/assets/profilepicture.jpg" type="image/jpeg">
 
   <!-- Styles -->
@@ -16,11 +16,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
 
-  <!-- App-icon -->
+  <!-- App Icon -->
   <link rel="apple-touch-icon" href="assets/icon-180.png">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#000000">
   <link rel="manifest" href="assets/manifest.json">
 </head>
@@ -36,7 +35,7 @@
 <div class="card">
 
   <!-- Profile Picture -->
- <img class="profile-pic" src="https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/3358333456c89e36c505b815321d40ef3fbed508/assets/profilepicture.jpg" alt="Profilbilde">
+  <img class="profile-pic" src="https://raw.github.com/chasserson/Charlotte.Asserson/3358333456c89e36c505b815321d40ef3fbed508/assets/profilepicture.jpg" alt="Profilbilde">
 
   <!-- Name and Title -->
   <h1>Charlotte Asserson</h1>
@@ -54,9 +53,9 @@
 
 </div>
 
-<!-- Bottom Area (outside card) -->
+<!-- Bottom Area -->
 <div class="bottom-area">
-  
+
   <!-- Stay in Touch Button -->
   <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
     Stay in touch
@@ -83,15 +82,16 @@
 
 </div>
 
+<!-- Scripts -->
 <script>
   window.addEventListener('load', () => {
     const card = document.querySelector('.card');
     const stayInTouchButton = document.getElementById('stayInTouch');
 
-    // Legg bare på "loaded" for card
+    // Legger på 'loaded' for CSS-anim
     card.classList.add('loaded');
 
-    // Ripple effect når brukeren trykker Stay in Touch
+    // Ripple effekt på kontakt-knapp
     stayInTouchButton.addEventListener('click', (e) => {
       e.preventDefault();
 
@@ -126,8 +126,6 @@
     });
   });
 </script>
-
-
 
 </body>
 </html>
