@@ -3,25 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visittkort</title>
+  <title>Charlotte Asserson</title>
 
-  <!-- Preload assets -->
+  <!-- Preload critical assets -->
   <link rel="preload" as="image" href="https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/ocean.webp" type="image/webp">
   <link rel="preload" as="image" href="https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/profilepicture.jpg" type="image/jpeg">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="assets/style.css">
-
-  <!-- PWA support -->
-  <link rel="apple-touch-icon" href="https://via.placeholder.com/180">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#ffffff">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -32,38 +26,37 @@
 <!-- Main card -->
 <div class="card">
 
-  <!-- Profile picture -->
+  <!-- Profile Picture -->
   <div class="profile-pic">
     <img src="https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/profilepicture.jpg" alt="Profilbilde">
   </div>
 
-  <!-- Name and occupation -->
+  <!-- Name and Title -->
   <h1>Charlotte Asserson</h1>
   <p>Aqua Medicine Biologist | Bremnes Seashore AS</p>
 
-  <!-- Info box -->
+  <!-- Info Box -->
   <div class="info-box">
     <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company. I have solid experience with the seawater phase of production, and during the past year, I have expanded my expertise to include the smolt phase, working with both flow-through and RAS systems.</p>
   </div>
 
-  <!-- Stay in touch button -->
-  <a href="contact.vcf" class="pill-button" id="stayInTouch">
+  <!-- Stay in Touch Button -->
+  <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
     Stay in touch
   </a>
 
-  <!-- Social buttons -->
+  <!-- Social Buttons -->
   <div class="social-buttons">
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/charlotte-asserson-38239039?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-btn">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+    <a href="https://www.linkedin.com/in/charlotte-asserson-38239039" target="_blank" class="social-btn">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
         <rect x="2" y="9" width="4" height="12"></rect>
         <circle cx="4" cy="4" r="2"></circle>
       </svg>
     </a>
-    <!-- Homepage -->
+
     <a href="https://example.com" target="_blank" class="social-btn">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 4h16v16H4z"></path>
       </svg>
     </a>
@@ -71,7 +64,7 @@
 
 </div>
 
-<!-- JavaScript (Single clean event handler) -->
+<!-- JavaScript for loading animations and ripple effect -->
 <script>
   window.addEventListener('load', () => {
     document.querySelector('.card').classList.add('loaded');
@@ -81,7 +74,6 @@
     stayInTouchButton.addEventListener('click', (e) => {
       e.preventDefault();
 
-      // Ripple effect
       const ripple = document.createElement('span');
       ripple.classList.add('ripple');
       stayInTouchButton.appendChild(ripple);
@@ -94,7 +86,6 @@
         ripple.remove();
       });
 
-      // Download VCF
       const url = stayInTouchButton.getAttribute('href');
       fetch(url)
         .then(response => response.blob())
