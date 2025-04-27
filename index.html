@@ -6,7 +6,6 @@
   <title>Charlotte Asserson</title>
 
   <!-- Preload critical assets -->
-  <link rel="preload" as="image" href="https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/ocean.webp" type="image/webp">
   <link rel="preload" as="image" href="https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/profilepicture.jpg" type="image/jpeg">
 
   <!-- Styles -->
@@ -19,19 +18,19 @@
 
   <!-- App-icon -->
   <link rel="apple-touch-icon" href="assets/icon-180.png">
-  <!-- Mobile Web App Capable -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#000000">
   <link rel="manifest" href="assets/manifest.json">
-
 </head>
 
 <body>
 
-<!-- Background -->
-<div class="background-image"></div>
+<!-- Background Video -->
+<video autoplay muted loop playsinline class="background-video">
+  <source src="assets/background.mp4" type="video/mp4">
+</video>
 
 <!-- Main card -->
 <div class="card">
@@ -50,7 +49,7 @@
     <img src="assets/logo.png" alt="Logo">
   </div>
 
-  <!-- Info Box -->
+  <!-- Info Text -->
   <div class="info-box">
     <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company. I have solid experience with the seawater phase of production, and during the past year, I have expanded my expertise to include the smolt phase, working with both flow-through and RAS systems.</p>
   </div>
@@ -71,11 +70,11 @@
     </a>
 
     <a href="https://seashore.no" target="_blank" class="social-btn">
-     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"></circle>
-    <line x1="2" y1="12" x2="22" y2="12"></line>
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-  </svg>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
     </a>
   </div>
 
