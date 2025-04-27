@@ -11,6 +11,17 @@ body, html {
   overflow: hidden;
 }
 
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+   background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/ocean.webp') no-repeat center center/cover;
+  animation: oceanWaves 3s ease-in-out infinite;
+  z-index: -1;
+
+}
 
 /* Glassmorphism-card */
 .card {
@@ -22,7 +33,7 @@ body, html {
   max-width: 380px;
   height: 520px;
   padding: 2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.15); /* Lys glass bakgrunn */
+  background: rgba(255, 255, 255, 0.10); /* Lys glass bakgrunn */
   border-radius: 20px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -88,7 +99,7 @@ body, html {
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  font-color: black;
+  font-color: ffffff;
   font-variation-settings:
     "wdth" 100;
 
