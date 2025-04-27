@@ -9,6 +9,7 @@ body, html {
   height: 100%;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
+  background-color: #000;
 }
 
 /* Background Video + Fallback */
@@ -22,16 +23,22 @@ body, html {
   z-index: -1;
   background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/fd17b48afbdb3743ca3d133c3fe264b45dbe174d/assets/ocean.webp') no-repeat center center/cover;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+/* Page Container */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1rem;
 }
 
 /* Main Card */
 .card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 90%;
   max-width: 360px;
   background: rgba(255, 255, 255, 0.10);
@@ -46,9 +53,7 @@ body, html {
   align-items: center;
   color: white;
   animation: fadeInPop 1s ease forwards;
-  z-index: 1;
 }
-
 
 /* Profile Picture */
 .profile-pic {
@@ -69,7 +74,6 @@ body, html {
 .card.loaded .profile-pic {
   opacity: 1;
 }
-
 
 /* Text Styles */
 .card h1 {
@@ -116,6 +120,14 @@ body, html {
   align-items: center;
   gap: 2rem;
   padding-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.card.loaded + .bottom-area {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Stay in Touch Button */
@@ -136,15 +148,7 @@ body, html {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(5px);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.6s ease;
-  opacity: 0;
-}
-
-.card.loaded ~ .bottom-area .pill-button {
-  animation: fadeUpBounce 0.8s ease forwards;
-  animation-delay: 1.2s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .pill-button:hover {
@@ -158,14 +162,6 @@ body, html {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.6s ease;
-}
-
-.card.loaded ~ .bottom-area .social-buttons {
-  animation: fadeUp 0.8s ease forwards;
-  animation-delay: 1.8s;
 }
 
 .social-btn {
@@ -186,59 +182,24 @@ body, html {
   height: 28px;
 }
 
+.social-btn:hover {
+  transform: scale(1.15);
+}
+
 /* Animations */
 @keyframes fadeInPop {
   0% {
     opacity: 0;
-    transform: translate(-50%, -40%) scale(0.8);
+    transform: scale(0.8);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
   }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUpBounce {
-  0% { opacity: 0; transform: translateY(30px); }
-  60% { opacity: 1; transform: translateY(-10px); }
-  100% { transform: translateY(0); }
 }
 
 @keyframes rippleEffect {
   to { transform: scale(4); opacity: 0; }
-}
-
-/* When card loads, animate elements */
-.card.loaded .pill-button {
-  animation: fadeUpBounce 0.8s ease forwards;
-  animation-delay: 1.2s;
-}
-
-.card.loaded .info-box {
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.8s;
-}
-
-.card.loaded .social-buttons a {
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.card.loaded .social-buttons a:nth-child(1) {
-  animation-delay: 1.5s;
-}
-
-.card.loaded .social-buttons a:nth-child(2) {
-  animation-delay: 1.8s;
 }
 
 /* Ripple effect inside button */
@@ -249,4 +210,49 @@ body, html {
   transform: scale(0);
   animation: rippleEffect 600ms linear;
   pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 360px) {
+  .card {
+    width: 95%;
+    max-width: 320px;
+    padding: 6rem 1rem 2rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+  }
+
+  .card h1 {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .card > p {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .info-box {
+    max-width: 280px;
+    padding: 1rem;
+  }
+
+  .pill-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-btn svg {
+    width: 24px;
+    height: 24px;
+  }
 }
