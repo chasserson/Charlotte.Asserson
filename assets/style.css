@@ -198,10 +198,6 @@ body, html {
   }
 }
 
-@keyframes rippleEffect {
-  to { transform: scale(4); opacity: 0; }
-}
-
 
 /* Responsive adjustments */
 @media (max-width: 360px) {
