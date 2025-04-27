@@ -1,4 +1,4 @@
-/* Reset og basis */
+/* Reset and basis */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body, html {
   overflow: hidden;
 }
 
-/* Bakgrunns-video */
+/* Background video */
 .background-video {
   position: fixed;
   top: 0;
@@ -28,7 +28,7 @@ body, html {
   object-fit: cover;
 }
 
-/* Glassmorphism-kort */
+/* Glassmorphism-card */
 .card {
   position: absolute;
   top: 50%;
@@ -37,16 +37,17 @@ body, html {
   width: 90%;
   max-width: 400px;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.45); /* Dark background in card */
   border-radius: 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6); /* Heavier shadow */
   color: white;
+  animation: fadeInPop 1s ease forwards;
 }
 
-/* Overskrift og tekst */
+/* Header and text */
 .card h1 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
@@ -57,9 +58,12 @@ body, html {
   font-size: 1rem;
 }
 
-/* Pilleknapp */
+/* Button for contact details */
 .pill-button {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   border: none;
   padding: 0.8rem 2rem;
@@ -74,7 +78,7 @@ body, html {
   background: linear-gradient(135deg, #0072ff, #00c6ff);
 }
 
-/* Sosiale knapper */
+/* Soicial buttons */
 .social-buttons {
   display: flex;
   justify-content: center;
@@ -82,7 +86,10 @@ body, html {
 }
 
 .social-btn {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 50%;
   padding: 0.5rem;
   backdrop-filter: blur(5px);
@@ -102,7 +109,7 @@ body, html {
 }
 
 
-/* Animasjon for kortet */
+/* Animation for the card */
 @keyframes fadeInPop {
   0% {
     opacity: 0;
@@ -114,13 +121,13 @@ body, html {
   }
 }
 
-/* Legg til animasjonen på kortet */
+/* Added animation for the card */
 .card {
   animation: fadeInPop 1s ease forwards;
 }
 
 
-/* Fade-in for knapper */
+/* Fade-in for buttons */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -132,18 +139,18 @@ body, html {
   }
 }
 
-/* Start skjult */
+/* Start hidden */
 .pill-button, .social-buttons {
   opacity: 0;
 }
 
-/* Animasjoner med forsinkelse */
+/* Animastions with delay */
 .card.loaded .pill-button {
   animation: fadeIn 0.8s ease forwards;
-  animation-delay: 1s; /* Starter etter kortet */
+  animation-delay: 1s; /* Starting after the card */
 }
 
 .card.loaded .social-buttons {
   animation: fadeIn 0.8s ease forwards;
-  animation-delay: 1.5s; /* Starter etter pill-knappen */
+  animation-delay: 1.5s; /* Starting after contact-button */
 }
