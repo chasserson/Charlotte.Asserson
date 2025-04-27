@@ -72,20 +72,19 @@ body, html {
   }
 }
 
-/* Card Styles */
+/* Main Card */
 .card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin: 6rem auto 0 auto;
   width: 90%;
   max-width: 360px;
-  padding: 6rem 1.5rem 2rem;
   background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
+  padding: 8rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,9 +92,10 @@ body, html {
   animation: fadeInPop 1s ease forwards;
 }
 
+/* Profile Picture */
 .profile-pic {
   position: absolute;
-  top: -60px;
+  top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 120px;
@@ -126,7 +126,7 @@ body, html {
 /* Text Styles */
 .card h1 {
   font-family: "Abril Fatface", cursive;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -140,6 +140,15 @@ body, html {
   padding: 0 0.5rem;
 }
 
+.logo {
+  margin-bottom: 1.5rem;
+}
+
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+
 /* Info Box */
 .info-box {
   font-family: "Roboto", sans-serif;
@@ -151,16 +160,24 @@ body, html {
   margin-bottom: 2rem;
 }
 
+/* Bottom Area */
+.bottom-area {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
 /* Stay in Touch Button */
 .pill-button {
   position: relative;
   overflow: hidden;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 2rem;
   border-radius: 30px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -175,6 +192,11 @@ body, html {
   opacity: 0;
 }
 
+.card.loaded ~ .bottom-area .pill-button {
+  animation: fadeUpBounce 0.8s ease forwards;
+  animation-delay: 1.2s;
+}
+
 .pill-button:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
@@ -184,16 +206,18 @@ body, html {
 .social-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1.2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
   opacity: 0;
 }
 
+.card.loaded ~ .bottom-area .social-buttons {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 1.8s;
+}
+
 .social-btn {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid white;
   border-radius: 50%;
   width: 56px;
@@ -208,10 +232,6 @@ body, html {
 .social-btn svg {
   width: 28px;
   height: 28px;
-}
-
-.social-btn:hover {
-  transform: scale(1.15);
 }
 
 /* Animations */
