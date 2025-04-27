@@ -1,5 +1,1 @@
-cd /path/to/Charlotte.Asserson
-touch assets/.gitkeep
-git add assets/.gitkeep
-git commit -m "Add .gitkeep to assets directory"
-git push origin main
+
