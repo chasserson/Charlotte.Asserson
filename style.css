@@ -37,7 +37,7 @@ body, html {
   width: 85%; /*with of box*/
   max-width: 520px; /*size of box*/
   padding: 2rem 1.5rem;
-  background: rgba(0, 0, 0, 0.75); /* Dark background in card */
+  background: rgba(0, 0, 0, 0.20); /* Dark background in card */
   border-radius: 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
