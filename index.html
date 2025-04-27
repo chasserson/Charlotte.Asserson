@@ -101,6 +101,52 @@
   });
 </script>
 
+  <script>
+  window.addEventListener('load', () => {
+    document.querySelector('.card').classList.add('loaded');
+
+    const stayInTouchButton = document.getElementById('stayInTouch');
+
+    // Flow-in download
+    stayInTouchButton.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Ripple effect
+      const ripple = document.createElement('span');
+      ripple.classList.add('ripple');
+      stayInTouchButton.appendChild(ripple);
+
+      // Find where click happens
+      const rect = stayInTouchButton.getBoundingClientRect();
+      ripple.style.left = `${e.clientX - rect.left}px`;
+      ripple.style.top = `${e.clientY - rect.top}px`;
+
+      // Remove ripple after animation 
+      ripple.addEventListener('animationend', () => {
+        ripple.remove();
+      });
+
+      // Condinue download
+      const url = stayInTouchButton.getAttribute('href');
+      fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+          const blobUrl = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = blobUrl;
+          a.download = 'contact.vcf';
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(blobUrl);
+        })
+        .catch(() => {
+          window.open(url, '_blank');
+        });
+    });
+  });
+</script>
+
 
 </body>
 </html>
