@@ -303,24 +303,47 @@ body, html {
 
 /* Ripple-effekt container */
 .pill-button {
-  position: relative; /* Viktig for ripple å sitte inni */
-  overflow: hidden;   /* Hindrer ripple fra å gå utenfor knappen */
+  position: relative; /* Important for ripple to start */
+  overflow: hidden;   /* Hindering ripple to go outside butn */
 }
 
-/* Ripple-stil */
+/* Ripple-style */
 .ripple {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   transform: scale(0);
   animation: rippleEffect 600ms linear;
-  pointer-events: none; /* Ikke blokkere klikk */
+  pointer-events: none; /* Don't block click */
 }
 
-/* Ripple-animering */
+/* Ripple-animation */
 @keyframes rippleEffect {
   to {
     transform: scale(4);
     opacity: 0;
   }
+}
+
+/* Fade + move up animation for info-box */
+@keyframes fadeUpInfoBox {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Start hidden */
+.info-box {
+  opacity: 0;
+}
+
+/* When card loads */
+.card.loaded .info-box {
+  animation: fadeUpInfoBox 1s ease forwards;
+  animation-delay: 0.8s; /* Kommer rett etter overskrift */
 }
