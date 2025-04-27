@@ -93,8 +93,8 @@ body, html {
 
 /* Job Title */
 .card > p {
+  font-family: "Abril Fatface", cursive;
   font-size: 1rem;
-  font-weight: 300;
   margin-bottom: 1.5rem;
 }
 
@@ -116,7 +116,7 @@ body, html {
 .info-box p {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 200;
   color: white;
 }
 
