@@ -68,12 +68,14 @@ body, html {
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   opacity: 0;
   transition: all 0.8s ease;
-  z-index: 2;
+  z-index: 3;
 }
 
 .card.loaded .profile-pic {
   opacity: 1;
+  animation: profilePulse 1s ease-in-out forwards;
 }
+
 
 /* Text Styles */
 .card h1 {
@@ -195,6 +197,18 @@ body, html {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes profilePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
