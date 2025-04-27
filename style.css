@@ -139,6 +139,7 @@ body, html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
   /*font*/
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -157,17 +158,17 @@ body, html {
 }
 
 .social-btn {
-  background: transparent; /* Ingen bakgrunnsfarge */
-  border: 1px solid white; /* Hvit tydelig sirkel */
-  border-radius: 50%; /* Full sirkel */
+  background: transparent; 
+  border: 1px solid white; 
+  border-radius: 50%; /* Full sircle */
   width: 64px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(5px); /* Beholder glass-effekt hvis ønsket */
+  backdrop-filter: blur(5px); /* glass-effect on button */
   -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Liten skygge for løft */
+  /* if wanted: box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  Small shadow for a lifted effect */
   transition: transform 0.3s;
 }
 
