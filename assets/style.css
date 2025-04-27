@@ -1,4 +1,4 @@
-/* Reset and basis */
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +8,11 @@
 body, html {
   height: 100%;
   font-family: "Roboto", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden; /* Unngå horisontal scroll */
+  background: #000; /* fallback hvis bakgrunnsbildet ikke laster */
 }
 
+/* Background image */
 .background-image {
   position: fixed;
   top: 0;
@@ -20,10 +22,18 @@ body, html {
   background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/main/assets/ocean.webp') no-repeat center center/cover;
   animation: oceanWaves 3s ease-in-out infinite;
   z-index: -1;
-
 }
 
-/* Glassmorphism-card */
+/* Ocean movement animation */
+@keyframes oceanWaves {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(10px, -5px) scale(1.02); }
+  50% { transform: translate(0, -10px) scale(1.015); }
+  75% { transform: translate(-10px, -5px) scale(1.02); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Glassmorphism card */
 .card {
   position: absolute;
   top: 50%;
@@ -33,21 +43,20 @@ body, html {
   max-width: 380px;
   height: 520px;
   padding: 2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.10); /* Lys glass bakgrunn */
+  background: rgba(255, 255, 255, 0.10);
   border-radius: 20px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  text-align: center;
   color: white;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: fadeInPop 1s ease forwards;
-  
 }
 
-/* Profilepic style*/
+/* Profile picture */
 .profile-pic {
   position: absolute;
   top: 0;
@@ -59,7 +68,8 @@ body, html {
   backdrop-filter: blur(10px);
   border-radius: 50%;
   padding: 5px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
 }
 
 .profile-pic img {
@@ -69,42 +79,30 @@ body, html {
   border-radius: 50%;
 }
 
-/* Start hidden */
-.profile-pic {
-  opacity: 0;
-}
-
-/* Fade-in animation with timing */
+/* When card loads */
 .card.loaded .profile-pic {
   animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.5s; /* Liten forsinkelse før kortet */
+  animation-delay: 0.5s;
 }
 
-
-/* Header and text */
+/* Heading */
 .card h1 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
   font-family: "Abril Fatface", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-color: white;
-
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 
-.card p {
-  margin-bottom: 2rem;
-  font-size: 1rem;
+/* Occupation text */
+.card > p {
   font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
+  font-size: 1rem;
   font-weight: 200;
-  font-style: normal;
-  font-color: white;
-  font-variation-settings:
-    "wdth" 100;
-
+  margin-bottom: 2rem;
+  color: white;
 }
-/*About info-box*/
+
+/* Info box */
 .info-box {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 15px;
@@ -112,34 +110,32 @@ body, html {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
-  margin-bottom: 2rem;
   width: 100%;
   max-width: 320px;
-  text-align: justify; 
+  text-align: justify;
+  opacity: 0;
 }
 
-
 .info-box p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: white;
 }
 
-
-/* Button for contact details */
+/* Stay in touch button */
 .pill-button {
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  z-index: 2; /* Sørg for at knappen er oppå ripples og annet */
   margin-top: 2rem;
-  margin-bottom: 3rem; 
-  background: rgba(255, 255, 255, 0.08); /* Svak hvit bakgrunn */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Tynn hvit kant */
+  margin-bottom: 3rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 0.8rem 2rem;
   border-radius: 50px;
   font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
   cursor: pointer;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -148,56 +144,53 @@ body, html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  /*font*/
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-color: white;
-  font-variation-settings:
-    "wdth" 100;
+  opacity: 0;
 }
 
-/* Soicial buttons */
+/* Button hover */
+.pill-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* Social buttons */
 .social-buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-top: auto; /* Skyv nedover */
-  z-index: 2;
+  margin-top: auto;
   position: relative;
+  z-index: 2;
+  opacity: 0;
 }
 
 .social-btn {
-  background: transparent; 
-  border: 1px solid black; 
-  border-radius: 50%; /* Full sircle */
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
   width: 64px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(5px); /* glass-effect on button */
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  /* if wanted: box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  Small shadow for a lifted effect */
   transition: transform 0.3s;
-}
-
-.social-btn svg {
-  width: 28px;
-  height: 28px;
 }
 
 .social-btn:hover,
 .social-btn:active {
   transform: scale(1.15);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* SVG inside social buttons */
+.social-btn svg {
+  width: 28px;
+  height: 28px;
+}
 
-/* Animation for the card */
+/* Animations */
 @keyframes fadeInPop {
   0% {
     opacity: 0;
@@ -209,63 +202,36 @@ body, html {
   }
 }
 
-/* Added animation for the card */
-.card {
-  animation: fadeInPop 1s ease forwards;
-}
-
-
-/* Fade-in for buttons */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Start hidden */
-.pill-button, .social-buttons {
-  opacity: 0;
-}
-
-/* Animastions with delay */
-.card.loaded .pill-button {
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 1s; /* Starting after the card */
-}
-
-.card.loaded .social-buttons {
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 1.5s; /* Starting after contact-button */
-}
-
-/* Keyframes for sosial icon-flow */
 @keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Start hidden */
-.social-buttons a {
-  opacity: 0;
+@keyframes fadeUpBounce {
+  0% { opacity: 0; transform: translateY(30px); }
+  60% { opacity: 1; transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rippleEffect {
+  to { transform: scale(4); opacity: 0; }
 }
 
 /* When card loads, animate */
+.card.loaded .pill-button {
+  animation: fadeUpBounce 0.8s ease forwards;
+  animation-delay: 1.2s;
+}
+
 .card.loaded .social-buttons a {
   animation: fadeUp 0.8s ease forwards;
 }
 
-/* Delay on every icon */
 .card.loaded .social-buttons a:nth-child(1) {
   animation-delay: 1.5s;
 }
@@ -274,76 +240,17 @@ body, html {
   animation-delay: 1.8s;
 }
 
-/* Add more icons if you've got any */
-
-/* Keyframes for bounce in */
-@keyframes fadeUpBounce {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.card.loaded .info-box {
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.8s;
 }
 
-/* For "Stay in touch"-button */
-.pill-button {
-  opacity: 0; /* Start hidden */
-}
-
-.card.loaded .pill-button {
-  animation: fadeUpBounce 0.8s ease forwards;
-  animation-delay: 1.2s; /* small delay and flowting in before the icons */
-}
-
-/* Ripple-effekt container */
-.pill-button {
-  position: relative; /* Important for ripple to start */
-  overflow: hidden;   /* Hindering ripple to go outside butn */
-}
-
-/* Ripple-style */
+/* Ripple */
 .ripple {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   transform: scale(0);
   animation: rippleEffect 600ms linear;
-  pointer-events: none; /* Don't block click */
-}
-
-/* Ripple-animation */
-@keyframes rippleEffect {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-/* Fade + move up animation for info-box */
-@keyframes fadeUpInfoBox {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Start hidden */
-.info-box {
-  opacity: 0;
-}
-
-/* When card loads */
-.card.loaded .info-box {
-  animation: fadeUpInfoBox 1s ease forwards;
-  animation-delay: 0.8s; /* Kommer rett etter overskrift */
+  pointer-events: none;
 }
