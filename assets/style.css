@@ -228,6 +228,14 @@ body, html {
 }
 
 /* Responsive adjustments for very small screens (eks. iPhone 12 mini, iPhone SE) */
+
+@media (max-width: 280px) {
+  .card h1 {
+    font-size: 1.4rem; 
+    padding: 0 0.2rem; 
+  }
+}
+
 @media (max-width: 360px) {
   .card {
     width: 95%;
@@ -244,11 +252,6 @@ body, html {
   .logo img {
     width: 50%;
     max-width: 120px;
-  }
-
-  .card h1 {
-    font-size: 1.4rem;
-    margin-top: 0.5rem;
   }
 
   .card > p {
