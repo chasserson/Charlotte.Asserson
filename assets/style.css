@@ -22,6 +22,11 @@ body, html {
   z-index: -1;
   background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/fd17b48afbdb3743ca3d133c3fe264b45dbe174d/assets/ocean.webp') no-repeat center center/cover;
   background-size: cover;
+  
+  /* Fade-in animation */
+  opacity: 0;
+  animation: fadeInVideo 2s ease-in-out forwards;
+  animation-delay: 0.5s; 
 }
 
 /* Page Container */
@@ -30,10 +35,10 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* 👈 Not centered anymore! */
   position: relative;
   z-index: 2;
-  padding: 2rem 1rem;
+  padding: 6rem 1rem 2rem; /* 👈 Room for profile-pic */
 }
 
 /* Main Card */
@@ -210,8 +215,17 @@ body, html {
   }
 }
 
+/* Fade-in animation for background video */
+@keyframes fadeInVideo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-/* Responsive adjustments */
+/* Responsive adjustments for very small screens (eks. iPhone 12 mini, iPhone SE) */
 @media (max-width: 360px) {
   .card {
     width: 95%;
@@ -253,5 +267,11 @@ body, html {
   .social-btn svg {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-container {
+    padding-top: 8rem; /* 📱 more room on smaller screens */
   }
 }
