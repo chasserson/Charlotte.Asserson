@@ -85,7 +85,8 @@ body, html {
 }
 
 .logo img {
-  max-width: 160px; /*from 120px to 160px, maybe something in between?*/
+  width: 40%;
+  max-width: 160px;
   height: auto;
 }
 
@@ -237,6 +238,11 @@ body, html {
     width: 100px;
     height: 100px;
     top: -50px;
+  }
+
+  .logo img {
+    width: 50%;
+    max-width: 120px;
   }
 
   .card h1 {
