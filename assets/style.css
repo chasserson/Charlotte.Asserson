@@ -140,10 +140,6 @@ body, html {
   transition: background 0.3s;
 }
 
-.pill-button:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
 /* Social Buttons */
 .social-buttons {
   display: flex;
@@ -178,15 +174,6 @@ body, html {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: scale(0);
-  animation: rippleEffect 600ms linear;
-  pointer-events: none;
 }
 
 @keyframes rippleEffect {
