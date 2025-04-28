@@ -35,28 +35,73 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* 👈 Not centered anymore! */
+  justify-content: flex-start; 
   position: relative;
   z-index: 2;
   padding: 6rem 1rem 2rem; /* 👈 Room for profile-pic */
 }
 
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-areas: "stack";
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background Video */
+.background-video {
+  grid-area: stack;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: url('assets/ocean.webp') no-repeat center center/cover;
+  background-size: cover;
+  z-index: -1;
+
+  /* Fade-in */
+  opacity: 0;
+  animation: fadeInVideo 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Foreground Content */
+.foreground-content {
+  grid-area: stack;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 2;
+  padding-top: 7rem;
+}
+
+/* Now you style .profile-pic, .card, .bottom-area normally */
+
 /* Main Card */
 .card {
+  margin-top: 7rem; 
   width: 90%;
   max-width: 360px;
   background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
-  padding: 8rem 1.5rem 2rem;
+  padding: 6rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   animation: fadeInPop 1s ease forwards;
+  position: relative; 
+  z-index: 1;
 }
 
 /* Profile Picture */
@@ -86,7 +131,7 @@ body, html {
 }
 
 .logo img {
-  width: 220 px;
+  width: 220px;
   max-width: 80%;
   height: auto;
 }
