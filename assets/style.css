@@ -20,16 +20,12 @@ body, html {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  background: url('ocean.webp') no-repeat center center/cover;
+  background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/fd17b48afbdb3743ca3d133c3fe264b45dbe174d/assets/ocean.webp') no-repeat center center/cover;
   background-size: cover;
-}
-
-  /* Fade-in animation */
   opacity: 0;
   animation: fadeInVideo 2s ease-in-out forwards;
   animation-delay: 0.5s; 
 }
-
 
 /* Page Container */
 .page-container {
@@ -63,20 +59,26 @@ body, html {
   z-index: 1;
 }
 
-/* Profile Picture */
+/* Profilbilde stil */
 .profile-pic {
   position: absolute;
-  top: 1rem;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
   border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  overflow: hidden;
-  transition: all 0.8s ease;
-  z-index: 3;
+  border-radius: 50%;
 }
 
 .card.loaded .profile-pic {
@@ -90,7 +92,7 @@ body, html {
 }
 
 .logo img {
-  width: 220 px;
+  width: 220px;
   max-width: 80%;
   height: auto;
 }
@@ -111,7 +113,6 @@ body, html {
   margin-bottom: 1.2rem;
   padding: 0 0.5rem;
 }
-
 
 /* Info Box */
 .info-box {
@@ -233,7 +234,6 @@ body, html {
 }
 
 /* Responsive adjustments for very small screens (eks. iPhone 12 mini, iPhone SE) */
-
 @media (max-width: 280px) {
   .card h1 {
     font-size: 1.4rem; 
@@ -287,6 +287,6 @@ body, html {
 
 @media (max-width: 400px) {
   .page-container {
-    padding-top: 6rem; /* 📱 more room on smaller screens */
+    padding-top: 6rem;
   }
 }
