@@ -63,7 +63,7 @@ body, html {
 /* Profilbilde stil */
 .profile-pic {
   position: absolute;
-  top: 0;
+  top: -60;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 120px;
