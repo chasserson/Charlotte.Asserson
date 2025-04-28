@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charlotte Asserson</title>
 
-  <!-- Styles -->
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/style.css">
 
   <!-- Fonts -->
@@ -23,6 +23,7 @@
 
 <body>
 
+  <!-- Background Video with fallback -->
   <div class="background-video">
     <video autoplay muted loop playsinline>
       <source src="assets/background.mp4" type="video/mp4">
@@ -30,112 +31,103 @@
     </video>
   </div>
 
+  <!-- Main Content -->
   <div class="main-container">
 
+    <!-- Profile Picture -->
     <div class="profile-pic">
       <img src="assets/Profilepic.jpg" alt="Profilbilde">
     </div>
 
+    <!-- Main Card -->
     <div class="card">
 
+      <!-- Logo -->
       <div class="logo">
         <img src="assets/logo.png" alt="Logo">
       </div>
 
+      <!-- Name and Title -->
       <h1>Charlotte Asserson</h1>
       <p>Aqua Medicine Biologist</p>
 
+      <!-- Info Text -->
       <div class="info-box">
-        <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company...</p>
+        <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company. I have solid experience with the seawater phase of production, and during the past year, I have expanded my expertise to include the smolt phase, working with both flow-through and RAS systems.</p>
       </div>
 
+      <!-- Bottom Area -->
       <div class="bottom-area">
+        <!-- Stay in Touch Button -->
         <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
           Stay in touch
         </a>
 
+        <!-- Social Buttons -->
         <div class="social-buttons">
-          <!-- LinkedIn and Web SVGs -->
+          <a href="https://www.linkedin.com/in/charlotte-asserson-38239039" target="_blank" class="social-btn">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+
+          <a href="https://seashore.no/en/quality/fish-welfare/" target="_blank" class="social-btn">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </a>
         </div>
       </div>
 
     </div>
-
   </div>
 
-</body>
+  <!-- Ripple effect and Download Script -->
+  <script>
+    window.addEventListener('load', () => {
+      const card = document.querySelector('.card');
+      const stayInTouchButton = document.getElementById('stayInTouch');
 
-<!-- Bottom Area -->
-<div class="bottom-area">
+      card.classList.add('loaded');
 
-  <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
-    Stay in touch
-  </a>
+      stayInTouchButton.addEventListener('click', (e) => {
+        e.preventDefault();
 
-  <div class="social-buttons">
-    <a href="https://www.linkedin.com/in/charlotte-asserson-38239039" target="_blank" class="social-btn">
-      <!-- LinkedIn SVG -->
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
-        <rect x="2" y="9" width="4" height="12"></rect>
-        <circle cx="4" cy="4" r="2"></circle>
-      </svg>
-    </a>
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        stayInTouchButton.appendChild(ripple);
 
-    <a href="https://seashore.no/en/quality/fish-welfare/" target="_blank" class="social-btn">
-      <!-- Web SVG -->
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
-    </a>
-  </div>
+        const rect = stayInTouchButton.getBoundingClientRect();
+        ripple.style.left = `${e.clientX - rect.left}px`;
+        ripple.style.top = `${e.clientY - rect.top}px`;
 
-</div>
-
-<!-- Scripts -->
-<script>
-  window.addEventListener('load', () => {
-    const card = document.querySelector('.card');
-    const stayInTouchButton = document.getElementById('stayInTouch');
-
-    card.classList.add('loaded');
-
-    stayInTouchButton.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const ripple = document.createElement('span');
-      ripple.classList.add('ripple');
-      stayInTouchButton.appendChild(ripple);
-
-      const rect = stayInTouchButton.getBoundingClientRect();
-      ripple.style.left = `${e.clientX - rect.left}px`;
-      ripple.style.top = `${e.clientY - rect.top}px`;
-
-      ripple.addEventListener('animationend', () => {
-        ripple.remove();
-      });
-
-      const url = stayInTouchButton.getAttribute('href');
-      fetch(url)
-        .then(response => response.blob())
-        .then(blob => {
-          const blobUrl = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.style.display = 'none';
-          a.href = blobUrl;
-          a.download = 'contact.vcf';
-          document.body.appendChild(a);
-          a.click();
-          window.URL.revokeObjectURL(blobUrl);
-        })
-        .catch(() => {
-          window.open(url, '_blank');
+        ripple.addEventListener('animationend', () => {
+          ripple.remove();
         });
+
+        const url = stayInTouchButton.getAttribute('href');
+        fetch(url)
+          .then(response => response.blob())
+          .then(blob => {
+            const blobUrl = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = blobUrl;
+            a.download = 'contact.vcf';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(blobUrl);
+          })
+          .catch(() => {
+            window.open(url, '_blank');
+          });
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
