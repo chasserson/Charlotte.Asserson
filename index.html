@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
 
-  <!-- App Icon -->
-  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#000000">
@@ -23,63 +23,60 @@
 
 <body>
 
-<!-- Background Video -->
-<video autoplay muted loop playsinline preload="auto" class="background-video" poster="ocean.webp">
-  <source src="assets/Background.mp4" type="video/mp4">
-</video>
+<!-- Background -->
+<div class="background-video">
+  <video autoplay muted loop playsinline>
+    <source src="assets/background.mp4" type="video/mp4">
+    <img src="assets/ocean.webp" alt="fallback bakgrunn">
+  </video>
+</div>
 
-<!-- Main Container -->
-<div class="page-container">
+<!-- Profile Pic -->
+<div class="profile-pic">
+  <img src="assets/Profilepic.jpg" alt="Profilbilde">
+</div>
 
-  <!-- Main Card -->
-  <div class="card">
+<!-- Main Card -->
+<div class="card">
 
-    <!-- Profile Picture -->
-    <img class="profile-pic" src="Profilepic.jpg" alt="Profilbilde">
-
-    <!-- Name and Title -->
-    <h1>Charlotte Asserson</h1>
-    <p>Aqua Medicine Biologist</p>
-
-    <!-- Logo -->
-    <div class="logo">
-      <img src="assets/logo.png" alt="Logo">
-    </div>
-
-    <!-- Info Text -->
-    <div class="info-box">
-      <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company. I have solid experience with the seawater phase of production, and during the past year, I have expanded my expertise to include the smolt phase, working with both flow-through and RAS systems.</p>
-    </div>
-
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo">
   </div>
 
-  <!-- Bottom Area -->
-  <div class="bottom-area">
+  <h1>Charlotte Asserson</h1>
+  <p>Aqua Medicine Biologist</p>
 
-    <!-- Stay in Touch Button -->
-    <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
-      Stay in touch
+  <div class="info-box">
+    <p>As an Aqua Medicine Biologist, I am mainly responsible for ensuring fish health across the company. I have solid experience with the seawater phase of production, and during the past year, I have expanded my expertise to include the smolt phase, working with both flow-through and RAS systems.</p>
+  </div>
+
+</div>
+
+<!-- Bottom Area -->
+<div class="bottom-area">
+
+  <a href="assets/contact.vcf" class="pill-button" id="stayInTouch">
+    Stay in touch
+  </a>
+
+  <div class="social-buttons">
+    <a href="https://www.linkedin.com/in/charlotte-asserson-38239039" target="_blank" class="social-btn">
+      <!-- LinkedIn SVG -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+        <rect x="2" y="9" width="4" height="12"></rect>
+        <circle cx="4" cy="4" r="2"></circle>
+      </svg>
     </a>
 
-    <!-- Social Buttons -->
-    <div class="social-buttons">
-      <a href="https://www.linkedin.com/in/charlotte-asserson-38239039" target="_blank" class="social-btn">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-      </a>
-
-      <a href="https://seashore.no/en/" target="_blank" class="social-btn">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-      </a>
-    </div>
-
+    <a href="https://seashore.no/en/quality/fish-welfare/" target="_blank" class="social-btn">
+      <!-- Web SVG -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+    </a>
   </div>
 
 </div>
@@ -90,10 +87,8 @@
     const card = document.querySelector('.card');
     const stayInTouchButton = document.getElementById('stayInTouch');
 
-    // Trigger 'loaded' animation
     card.classList.add('loaded');
 
-    // Ripple effekt på kontakt-knapp
     stayInTouchButton.addEventListener('click', (e) => {
       e.preventDefault();
 
