@@ -57,9 +57,9 @@ body, html {
 /* Profile Picture */
 .profile-pic {
   position: absolute;
-  top: 0;
+  top: 1rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -75,6 +75,14 @@ body, html {
   animation: profilePulse 1s ease-in-out forwards;
 }
 
+.logo {
+  margin-bottom: 1.5rem;
+}
+
+.logo img {
+  max-width: 160px; /*from 120px to 160px, maybe something in between?*/
+  height: auto;
+}
 
 /* Text Styles */
 .card h1 {
@@ -91,15 +99,6 @@ body, html {
   line-height: 1.4;
   margin-bottom: 1.2rem;
   padding: 0 0.5rem;
-}
-
-.logo {
-  margin-bottom: 1.5rem;
-}
-
-.logo img {
-  max-width: 120px;
-  height: auto;
 }
 
 /* Info Box */
