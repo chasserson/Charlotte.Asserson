@@ -172,10 +172,13 @@ body, html {
 
 /* Social Buttons */
 .social-buttons {
+  width: 100%;
+  max-width: 320px; /* 👈 Begrens bredden så den matcher kortet */
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: space-around; /* 👈 Gir jevn fordeling av 3 ikoner */
+  gap: 1rem; /* Små mellomrom */
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .social-btn {
@@ -189,6 +192,7 @@ body, html {
   justify-content: center;
   backdrop-filter: blur(5px);
   transition: transform 0.3s;
+  flex-shrink: 0; /* 👈 Hindrer knapper å krympe på små skjermer */
 }
 
 .social-btn svg {
@@ -199,6 +203,7 @@ body, html {
 .social-btn:hover {
   transform: scale(1.15);
 }
+
 
 /* Animations */
 @keyframes fadeInPop {
