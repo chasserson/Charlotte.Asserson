@@ -22,6 +22,7 @@ body, html {
   z-index: -1;
   background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/fd17b48afbdb3743ca3d133c3fe264b45dbe174d/assets/ocean.webp') no-repeat center center/cover;
   background-size: cover;
+  /*Fade-in animation*/
   opacity: 0;
   animation: fadeInVideo 2s ease-in-out forwards;
   animation-delay: 0.5s; 
@@ -33,7 +34,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;  
-  justify-content: center; 
+  justify-content: felx-start; /*Moved from center, if forced center: center;*/
   position: relative;
   z-index: 2;
   padding: 6rem 1rem 2rem;
@@ -63,19 +64,19 @@ body, html {
 /* Profilbilde stil */
 .profile-pic {
   position: absolute;
-  top: 0;
+  top: 1rem; /* Small margin from top */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   width: 120px;
   height: 120px;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
   border-radius: 50%;
-  padding: 5px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  overflow: hidden;
-  z-index: 2;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 3;
 }
+
 
 .profile-pic img {
   width: 100%;
@@ -236,12 +237,6 @@ body, html {
 }
 
 /* Responsive adjustments for very small screens (eks. iPhone 12 mini, iPhone SE) */
-@media (max-width: 280px) {
-  .card h1 {
-    font-size: 1.4rem; 
-    padding: 0 0.2rem; 
-  }
-}
 
 @media (max-width: 360px) {
   .card {
