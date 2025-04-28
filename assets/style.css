@@ -29,7 +29,7 @@ body, html {
   animation-delay: 0.5s; 
 
   /* Blur-effect */
-  filter: blur(10px); /* Adjust number 4-10px */
+  filter: blur(15px); /* Adjust number 4-10px */
 }
 
 /* Page Container */
