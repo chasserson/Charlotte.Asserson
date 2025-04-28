@@ -1,3 +1,4 @@
+CSS FØR CHANGE:
 /* Reset and Base */
 * {
   margin: 0;
@@ -9,85 +10,94 @@ body, html {
   height: 100%;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
-  background: black; /* fallback */
+  background-color: #000;
 }
 
-/* Background Video */
+/* Background Video + Fallback */
 .background-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-}
-
-.background-video video,
-.background-video img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  z-index: -1;
+  background: url('https://raw.githubusercontent.com/chasserson/Charlotte.Asserson/fd17b48afbdb3743ca3d133c3fe264b45dbe174d/assets/ocean.webp') no-repeat center center/cover;
+  background-size: cover;
 }
 
-/* Main Content */
-.main-container {
+  /* Fade-in animation */
+  opacity: 0;
+  animation: fadeInVideo 2s ease-in-out forwards;
+  animation-delay: 0.5s; 
+}
+
+
+/* Page Container */
+.page-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 8rem;
+  justify-content: center;
   position: relative;
   z-index: 2;
+  padding: 6rem 1rem 2rem;
 }
 
-/* Profile Picture */
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  margin-bottom: -3rem;
-  z-index: 3;
-}
-
-.profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Card */
+/* Main Card */
 .card {
+  margin-top: 7rem; 
   width: 90%;
-  max-width: 380px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
-  padding: 6rem 1.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 6rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  position: relative;
+  animation: fadeInPop 1s ease forwards;
+  position: relative; 
+  z-index: 1;
 }
 
-/* Logo */
+/* Profile Picture */
+.profile-pic {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 3;
+}
+
+.card.loaded .profile-pic {
+  opacity: 1;
+  animation: profilePulse 1s ease-in-out forwards;
+}
+
 .logo {
-  margin-top: -2rem;
-  margin-bottom: 1rem;
+  margin-top: -1rem;
+  margin-bottom: 0.5rem;
 }
 
 .logo img {
-  width: 160px;
+  width: 220 px;
   max-width: 80%;
   height: auto;
 }
 
-/* Name and Title */
+/* Text Styles */
 .card h1 {
   font-family: "Abril Fatface", cursive;
   font-size: 1.8rem;
@@ -99,8 +109,11 @@ body, html {
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 100;
-  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+  padding: 0 0.5rem;
 }
+
 
 /* Info Box */
 .info-box {
@@ -120,10 +133,21 @@ body, html {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  padding-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
 }
 
-/* Pill Button */
+.card.loaded + .bottom-area {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stay in Touch Button */
 .pill-button {
+  position: relative;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
@@ -132,12 +156,18 @@ body, html {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 200;
+  text-transform: none;
   text-decoration: none;
-  backdrop-filter: blur(5px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s;
+  backdrop-filter: blur(5px);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.pill-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
 }
 
 /* Social Buttons */
@@ -145,6 +175,7 @@ body, html {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .social-btn {
@@ -157,11 +188,16 @@ body, html {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(5px);
+  transition: transform 0.3s;
 }
 
 .social-btn svg {
   width: 28px;
   height: 28px;
+}
+
+.social-btn:hover {
+  transform: scale(1.15);
 }
 
 /* Animations */
@@ -176,9 +212,83 @@ body, html {
   }
 }
 
-@keyframes rippleEffect {
-  to {
-    transform: scale(4);
+@keyframes profilePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Fade-in animation for background video */
+@keyframes fadeInVideo {
+  from {
     opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for very small screens (eks. iPhone 12 mini, iPhone SE) */
+
+@media (max-width: 280px) {
+  .card h1 {
+    font-size: 1.4rem; 
+    padding: 0 0.2rem; 
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    width: 95%;
+    max-width: 320px;
+    padding: 6rem 1rem 2rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+  }
+
+  .logo img {
+    width: 50%;
+    max-width: 120px;
+  }
+
+  .card > p {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .info-box {
+    max-width: 280px;
+    padding: 1rem;
+  }
+
+  .pill-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-container {
+    padding-top: 6rem; /* 📱 more room on smaller screens */
   }
 }
