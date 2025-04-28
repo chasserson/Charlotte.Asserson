@@ -34,7 +34,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;  
-  justify-content: felx-start; /*Moved from center, if forced center: center;*/
+  justify-content: flex-start; /*Moved from center, if forced center: center;*/
   position: relative;
   z-index: 2;
   padding: 6rem 1rem 2rem;
@@ -245,10 +245,10 @@ body, html {
     padding: 6rem 1rem 2rem;
   }
 
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-    top: -50px;
+ .profile-pic {
+    width: 90px;
+    height: 90px;
+    top: 0.5rem;
   }
 
   .logo img {
