@@ -96,8 +96,9 @@ body, html {
 
 /* Text Styles */
 .card h1 {
-  font-family: "Abril Fatface", cursive;
-  font-size: 1.8rem;
+  font-family: "area-normal", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
