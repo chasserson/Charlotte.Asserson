@@ -74,21 +74,19 @@ body, html {
 
 /* Profile picture */
 .profile-pic {
-  align-self: flex-end;
-  margin-top: -6rem; /* eller juster etter padding-top i .card */
-  margin-right: -1.5rem; /* matcher høyre padding i .card */
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 120px;
   height: 120px;
-  overflow: hidden;
-  border-top-right-radius: 0;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  z-index: 2;
+  object-fit: cover;
+  z-index: 3;
+  clip-path: inset(0 0 30% 40% round 0% 0% 30% 30%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   opacity: 0;
   transition: all 0.8s ease;
 }
+
 
 .card.loaded .profile-pic {
   opacity: 1;
