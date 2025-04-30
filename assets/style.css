@@ -145,7 +145,7 @@ body, html {
   transform: translateY(0);
 }
 
-/* Stay in Touch Button */
+/* Keep in Touch Button */
 .pill-button {
   position: relative;
   overflow: hidden;
@@ -174,9 +174,9 @@ body, html {
 /* Social Buttons */
 .social-buttons {
   width: 100%;
-  max-width: 320px; /* 👈 Begrens bredden så den matcher kortet */
+  max-width: 320px; /* Keeps the button matching the card width */
   display: flex;
-  justify-content: space-around; /* 👈 Gir jevn fordeling av 3 ikoner */
+  justify-content: space-around; /* evenly spacing the icons */
   gap: 1rem; /* Små mellomrom */
   flex-wrap: wrap;
   margin-top: 1rem;
@@ -193,7 +193,7 @@ body, html {
   justify-content: center;
   backdrop-filter: blur(5px);
   transition: transform 0.3s;
-  flex-shrink: 0; /* 👈 Hindrer knapper å krympe på små skjermer */
+  flex-shrink: 0; /* Keeps the buttons from shrinking on smaller screens */
 }
 
 .social-btn svg {
