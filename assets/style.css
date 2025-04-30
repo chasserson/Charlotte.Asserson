@@ -101,6 +101,7 @@ body, html {
   object-fit: cover;
   display: block;
 }
+
 /* Text Styles */
 .card h1 {
   font-family: "Abril Fatface", cursive;
