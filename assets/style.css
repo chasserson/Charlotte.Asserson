@@ -103,9 +103,9 @@ body, html {
 }
 
 .card > p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-family: "area-normal", sans-serif;
+  font-weight: 100;
+  font-style: normal;
   line-height: 1.4;
   margin-bottom: 1.2rem;
   padding: 0 0.5rem;
@@ -113,12 +113,12 @@ body, html {
 
 /* Info Box */
 .info-box {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
+  font-family: "area-normal", sans-serif;
   font-weight: 100;
+  font-style: normal;
   line-height: 1.6;
   text-align: justify;
-  color: white;
+  color: rgb(234, 134, 93); /* salmon red */
   margin-bottom: 2rem;
 }
 
