@@ -81,7 +81,7 @@ body, html {
   width: 120px;
   height: 160px; /* Avlang høyde */
   overflow: hidden;
-  clip-path: path('M0,0 L100,0 L100,100 Q50,140 0,100 Z');
+  clip-path: path('M0,0 L100,0 L100,100 Q100,140 50,140 Q0,140 0,100 Z');
 }
 
 .profile-pic img {
