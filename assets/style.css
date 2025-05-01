@@ -74,8 +74,12 @@ body, html {
 
 /* Profile picture */
 .profile-pic {
-  width: 100px;
-  height: 140px; /* Avlang høyde */
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translate (-50%, 0);
+  width: 120px;
+  height: 160px; /* Avlang høyde */
   overflow: hidden;
   clip-path: path('M0,0 L100,0 L100,100 Q50,140 0,100 Z');
 }
