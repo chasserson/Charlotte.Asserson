@@ -232,7 +232,7 @@ body, html {
   font-family: "area-normal", sans-serif;
   font-weight: 100;
   font-style: normal;
-  color:  rgb(234, 134, 93);
+  color: rgb(234, 134, 93);
   text-decoration: none;
   transition: transform 0.2s ease, text-decoration 0.2s ease;
 }
@@ -240,6 +240,14 @@ body, html {
 .link:hover {
   transform: scale(1.1);
   text-decoration: underline;
+}
+
+.link:focus {
+  color:  rgb(234, 134, 93);
+}
+
+.link:active {
+  color: rgb(255, 150, 120);
 }
 
 /* Animations */
