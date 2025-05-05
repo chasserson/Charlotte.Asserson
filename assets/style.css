@@ -190,15 +190,18 @@ body, html {
   flex-shrink: 0;
 }
 
+.pill-button:hover {
+  transform: scale(1.15);
+}
 
 /* Social Buttons */
 .social-buttons {
-  width: 100%;
+  width: 50%;
   max-width: 320px; /* Keeps the button matching the card width */
   display: flex;
-  justify-content: space-around; /* evenly spacing the icons */
+  justify-content: center; /* evenly spacing the icons */
   gap: 1rem; /* Små mellomrom */
-  flex-wrap: wrap;
+  flex-wrap: center;
   margin-top: 1rem;
 }
 
@@ -225,6 +228,19 @@ body, html {
   transform: scale(1.15);
 }
 
+.link {
+  font-family: "area-normal", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color:  rgb(234, 134, 93);
+  text-decoration: none;
+  transition: transform 0.2s ease, text-decoration 0.2s ease;
+}
+
+.link:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
 
 /* Animations */
 @keyframes fadeInPop {
